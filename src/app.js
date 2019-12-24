@@ -25,6 +25,8 @@ mongoose.connection.on('connected', () => {
     console.log('Aplicação conectada com o banco de dados');
 })
 
+//Carregar od Models
+const Product = require('./models/product');
 
 // Carregar as Rotas
 const indexRoute = require('./routes/index-route');
