@@ -1,5 +1,7 @@
 'use strict'
 
+// const Product = mongoose.model('../models/product');
+// const Product = require('../models/product');
 exports.post = (req, res, next) => {
     res.status(201).send(req.body);
 };
