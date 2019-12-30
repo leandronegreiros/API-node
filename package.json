@@ -16,7 +16,8 @@
         "guid": "0.0.12",
         "http": "0.0.0",
         "md5": "^2.2.1",
-        "mongoose": "^5.8.3"
+        "mongoose": "^5.8.3",
+        "sendgrid": "^2.0.0"
     },
     "devDependencies": {
         "node-dev": "^4.0.0"
