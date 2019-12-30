@@ -15,6 +15,7 @@
         "express": "^4.17.1",
         "guid": "0.0.12",
         "http": "0.0.0",
+        "md5": "^2.2.1",
         "mongoose": "^5.8.3"
     },
     "devDependencies": {
