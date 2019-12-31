@@ -75,3 +75,41 @@ exports.authenticate = async(req, res, next) => {
         });
     }
 }
+
+exports.refreshToken = async(req, res, next) => {
+    try {
+        // Recuperar o token
+        const token = req.body.token || req.query.token || req.headers['x-access-token'];
+
+        // Decodifica o token
+        const data = await authservice.decodeToken(token);
+
+        const customer = await repository.getById(data.id);
+
+        if (!customer) {
+            res.status(404).send({
+                message: 'Cliente não encontrado'
+            });
+            return;
+        }
+
+        const tokenData = await authservice.generateToken({
+            id: customer._id,
+            email: customer.email,
+            name: customer.name
+        });
+
+        res.status(201).send({
+            token: token,
+            data: {
+                email: customer.email,
+                name: customer.name
+            }
+        });
+    } catch (error) {
+        res.status(400).send({
+            message: 'Falha ao cadastrar sua requisição!',
+            data: error
+        });
+    }
+}
