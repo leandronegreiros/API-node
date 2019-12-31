@@ -13,9 +13,6 @@ const router = express.Router();
 const options = { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true };
 mongoose.connect(config.connectionString, options);
 
-// const url = 'mongodb+srv://leandro:jbo301208@cluster0-igu4r.mongodb.net/test?retryWrites=true&w=majority';
-// mongoose.connect(url, options);
-
 mongoose.connection.on('error', (err) => {
     console.log('Erro na conexão com o banco de dados: ' + err);
 })
