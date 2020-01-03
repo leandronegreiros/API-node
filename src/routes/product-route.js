@@ -9,8 +9,8 @@ router.get('/', controller.get);
 router.get('/:slug', controller.getBySlug);
 router.get('/admin/:id', controller.getById);
 router.get('/tags/:tag', controller.getByTag);
-router.post('/', authservice.authorize, controller.post);
-router.put('/:id', authservice.authorize, controller.put);
-router.delete('/', authservice.authorize, controller.delete);
+router.post('/', authservice.isAdmin, controller.post);
+router.put('/:id', authservice.isAdmin, controller.put);
+router.delete('/', authservice.isAdmin, controller.delete);
 
 module.exports = router
