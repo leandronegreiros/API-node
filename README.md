@@ -1,5 +1,5 @@
 # typeScript-na-pratica
-Projeto que implementado a construção de um back-end usando Node com altenticação de rotas usando js
+Projeto que implementado a construção de um back-end usando Node com autenticação de rotas usando js
 
 # ✋🏻 Pré-requisitos
 - [Node.js](https://nodejs.org/en/)
